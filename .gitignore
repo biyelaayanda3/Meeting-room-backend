@@ -1,0 +1,33 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+**/bin/
+**/obj/
+out/
+
+# Logs
+**/logs/
+*.log
+
+# Test and coverage
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Local/development settings
+MeetingRoomBooking.API/appsettings.Development.json
+
+# OS files
+.DS_Store
+Thumbs.db
