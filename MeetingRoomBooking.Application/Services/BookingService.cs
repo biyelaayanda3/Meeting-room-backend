@@ -91,14 +91,12 @@ public class BookingService : IBookingService
                 throw new NotFoundException("Room", dto.RoomId);
         }
 
-        // Check conflicts — EXCLUDE current booking!
         var hasConflict = await _bookingRepository.HasConflictAsync(
                 dto.RoomId, dto.StartTime, dto.EndTime, excludeBookingId: id);
 
         if (hasConflict)
             throw new BookingConflictException();
 
-        // Update!
         booking.Title = dto.Title;
         booking.OrganizerName = dto.OrganizerName;
         booking.OrganizerEmail = dto.OrganizerEmail;
